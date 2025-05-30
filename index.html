@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>리그 스킨 사주세요</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      flex-direction: column;
+      text-align: center;
+    }
+    button {
+      padding: 16px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin: 10px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #finalSection {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+    #finalImageContainer {
+      position: relative;
+      display: inline-block;
+    }
+    .arrow {
+      position: absolute;
+      font-size: 48px;
+      color: red;
+      font-weight: bold;
+      animation: bounce 1s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .top-left { top: -30px; left: -30px; transform: rotate(-45deg); }
+    .top-right { top: -30px; right: -30px; transform: rotate(45deg); }
+    .bottom-left { bottom: -30px; left: -30px; transform: rotate(225deg); }
+    .bottom-right { bottom: -30px; right: -30px; transform: rotate(-225deg); }
+    #finalText {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    img {
+      max-width: 400px;
+      border: 4px solid #333;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <button id="firstBtn">눌러보세요</button>
+  <button id="secondBtn" style="display:none;">축하합니다! 당신은 상품에 당첨되셨습니다!</button>
+
+  <div id="finalSection">
+    <div id="finalImageContainer">
+      <img src="dream-dragon-yasuo-league-of-legends-thumb.jpg" alt="리그 스킨">
+      <div class="arrow top-left">⬇</div>
+      <div class="arrow top-right">⬇</div>
+      <div class="arrow bottom-left">⬆</div>
+      <div class="arrow bottom-right">⬆</div>
+    </div>
+    <div id="finalText">리그 스킨 사주세요</div>
+  </div>
+
+  <script>
+    const firstBtn = document.getElementById('firstBtn');
+    const secondBtn = document.getElementById('secondBtn');
+    const finalSection = document.getElementById('finalSection');
+
+    firstBtn.addEventListener('click', () => {
+      firstBtn.style.display = 'none';
+      secondBtn.style.display = 'inline-block';
+    });
+
+    secondBtn.addEventListener('click', () => {
+      secondBtn.style.display = 'none';
+      finalSection.style.display = 'flex';
+    });
+  </script>
+</body>
+</html>
